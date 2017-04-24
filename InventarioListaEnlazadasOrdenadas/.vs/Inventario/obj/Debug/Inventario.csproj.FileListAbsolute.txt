@@ -1,0 +1,18 @@
+C:\Users\Packo\onedrive\documentos\visual studio 2017\Projects\Inventario\Inventario\bin\Debug\Inventario.exe.config
+C:\Users\Packo\onedrive\documentos\visual studio 2017\Projects\Inventario\Inventario\bin\Debug\Inventario.exe
+C:\Users\Packo\onedrive\documentos\visual studio 2017\Projects\Inventario\Inventario\bin\Debug\Inventario.pdb
+C:\Users\Packo\onedrive\documentos\visual studio 2017\Projects\Inventario\Inventario\obj\Debug\Inventario.csprojResolveAssemblyReference.cache
+C:\Users\Packo\onedrive\documentos\visual studio 2017\Projects\Inventario\Inventario\obj\Debug\Inventario.FormMain.resources
+C:\Users\Packo\onedrive\documentos\visual studio 2017\Projects\Inventario\Inventario\obj\Debug\Inventario.Properties.Resources.resources
+C:\Users\Packo\onedrive\documentos\visual studio 2017\Projects\Inventario\Inventario\obj\Debug\Inventario.csproj.GenerateResource.Cache
+C:\Users\Packo\onedrive\documentos\visual studio 2017\Projects\Inventario\Inventario\obj\Debug\Inventario.exe
+C:\Users\Packo\onedrive\documentos\visual studio 2017\Projects\Inventario\Inventario\obj\Debug\Inventario.pdb
+C:\Users\Packo\Google Drive\Escuela\4 Semestre\Curso C#\12.-Inventario\Inventario\bin\Debug\Inventario.exe.config
+C:\Users\Packo\Google Drive\Escuela\4 Semestre\Curso C#\12.-Inventario\Inventario\bin\Debug\Inventario.exe
+C:\Users\Packo\Google Drive\Escuela\4 Semestre\Curso C#\12.-Inventario\Inventario\bin\Debug\Inventario.pdb
+C:\Users\Packo\Google Drive\Escuela\4 Semestre\Curso C#\12.-Inventario\Inventario\obj\Debug\Inventario.csprojResolveAssemblyReference.cache
+C:\Users\Packo\Google Drive\Escuela\4 Semestre\Curso C#\12.-Inventario\Inventario\obj\Debug\Inventario.FormMain.resources
+C:\Users\Packo\Google Drive\Escuela\4 Semestre\Curso C#\12.-Inventario\Inventario\obj\Debug\Inventario.Properties.Resources.resources
+C:\Users\Packo\Google Drive\Escuela\4 Semestre\Curso C#\12.-Inventario\Inventario\obj\Debug\Inventario.csproj.GenerateResource.Cache
+C:\Users\Packo\Google Drive\Escuela\4 Semestre\Curso C#\12.-Inventario\Inventario\obj\Debug\Inventario.exe
+C:\Users\Packo\Google Drive\Escuela\4 Semestre\Curso C#\12.-Inventario\Inventario\obj\Debug\Inventario.pdb
