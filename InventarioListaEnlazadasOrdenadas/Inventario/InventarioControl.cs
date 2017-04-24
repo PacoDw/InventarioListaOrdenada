@@ -21,16 +21,35 @@ namespace Inventario
         //---------------------------------------------------------------------------------------------------------------------------------------------------------
         //METODO AGREGAR 
         public void Agregar(Producto newProduct)
-        {
+            {
             if (productInicio == null)
                 productInicio = newProduct;
             else
             {
                 Producto temp = productInicio;
-                while (temp.siguiente != null)
-                    temp = temp.siguiente;
 
-                temp.siguiente = newProduct;
+                if(newProduct.codigo < temp.codigo)
+                {
+                    newProduct.siguiente = temp;
+                    productInicio = newProduct;
+                }
+                else
+                {
+                    while (temp.siguiente != null)
+                    {
+                        if (newProduct != null)
+                        {
+                            if (newProduct.codigo < temp.siguiente.codigo)
+                            {
+                                newProduct.siguiente = temp.siguiente;
+                                temp.siguiente = newProduct;
+                                newProduct = null;
+                            }
+                        }
+                        temp = temp.siguiente;
+                    }
+                    temp.siguiente = newProduct;
+                }
             }
         }
 
