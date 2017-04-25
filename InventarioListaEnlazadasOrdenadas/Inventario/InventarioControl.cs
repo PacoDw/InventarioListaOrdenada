@@ -10,7 +10,7 @@ namespace Inventario
     {
         //---------------------------------------------------------------------------------------------------------------------------------------------------------
         //ATRIBUTOS DE LA CLASE
-        private Producto productInicio; 
+        private Producto productInicio;
         //---------------------------------------------------------------------------------------------------------------------------------------------------------
         //CONSTRUCTOR DE LA CLASE INVENTARIOCONTROL
         public InventarioControl()
@@ -21,34 +21,38 @@ namespace Inventario
         //---------------------------------------------------------------------------------------------------------------------------------------------------------
         //METODO AGREGAR 
         public void Agregar(Producto newProduct)
-            {
+        {
             if (productInicio == null)
                 productInicio = newProduct;
             else
             {
                 Producto temp = productInicio;
 
-                if(newProduct.codigo < temp.codigo)
+                if (newProduct.codigo < temp.codigo)
                 {
                     newProduct.siguiente = temp;
                     productInicio = newProduct;
                 }
                 else
                 {
-                    while (temp.siguiente != null)
-                    {
-                        if (newProduct != null)
-                        {
-                            if (newProduct.codigo < temp.siguiente.codigo)
-                            {
-                                newProduct.siguiente = temp.siguiente;
-                                temp.siguiente = newProduct;
-                                newProduct = null;
-                            }
-                        }
-                        temp = temp.siguiente;
-                    }
+                    Agregar(ref temp, ref newProduct);
                     temp.siguiente = newProduct;
+                }
+            }
+        }
+        private void Agregar(ref Producto temp, ref Producto nuevo)
+        {
+            if (temp.siguiente != null)
+            {
+                if (nuevo.codigo < temp.siguiente.codigo)
+                {
+                    nuevo.siguiente = temp.siguiente;
+                    temp.siguiente = nuevo;
+                }
+                else
+                {
+                    temp = temp.siguiente;
+                    Agregar(ref temp, ref nuevo);
                 }
             }
         }
@@ -139,7 +143,6 @@ namespace Inventario
                     Insertar(nuevo, temp.siguiente, posicion, cont);
                 }
             }
-
         }
 
         //---------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -151,13 +154,12 @@ namespace Inventario
 
             Producto temp = productInicio;
 
-            while(temp != null)
+            while (temp != null)
             {
                 reporte += temp.ToString();
                 temp = temp.siguiente;
             }
             return reporte; // se retorna el reporte con las caracteristicas de todos los productos
         }
-
     }
 }
