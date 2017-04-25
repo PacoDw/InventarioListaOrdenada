@@ -57,21 +57,19 @@ namespace Inventario
         //METODO BUSCAR
         public Producto Buscar(int codigo)
         {
-            //Definimos una variable bool para definir si se encontro un producto
             Producto temp = null;
 
             if (productInicio != null)
             {
-                 temp = productInicio;
-                while(temp != null)
+                temp = productInicio;
+                while (temp != null)
                 {
                     if (temp.codigo == codigo)
                         break;
                     temp = temp.siguiente;
                 }
             }
-            //si se encuentra aux pro es igual a producto acutal
-            return temp;  //se retorna torna la referencia del producto actual
+            return temp;
         }
 
         //---------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -79,50 +77,70 @@ namespace Inventario
         public void Borrar(int codigo)
         {
             Producto temp = null;
-            bool encontrado = false;
 
-            if(productInicio != null)
+            if (productInicio != null)
             {
                 temp = productInicio;
 
-                if(temp.codigo == codigo)
+                if (temp.codigo == codigo)
                 {
                     productInicio = temp.siguiente;
                     temp = null;
                 }
                 else
+                    Borrar(temp, codigo);
+            }
+        }
+        private void Borrar(Producto temp, int codigo)
+        {
+            if (temp.siguiente != null)
+            {
+                if (temp.siguiente.codigo == codigo)
                 {
-                    while (encontrado != true)
-                    {
-                        if (temp.siguiente.codigo == codigo)
-                        {
-                            temp.siguiente = temp.siguiente.siguiente;
-                            encontrado = true;
-                        }
-                        temp = temp.siguiente;
-                    }
+                    temp.siguiente = temp.siguiente.siguiente;
                 }
+                else
+                    Borrar(temp.siguiente, codigo);
             }
         }
 
         //---------------------------------------------------------------------------------------------------------------------------------------------------------
-        //METODO BUSCAR
-        //public void Insertar(Producto newProduct, byte posicion)
-        //{
-        //    //Se crea un auxiliar
-        //    Producto aux = null;
+        //METODO INSERTAR
+        public void Insertar(Producto newProduct, byte posicion)
+        {
+            Producto temp = null;
+            int contador = 1;
 
-        //    if (contador < vecProduct.Length)
-        //        _contador++;
+            if (productInicio != null)
+            {
+                temp = productInicio;
 
-        //    //Se hace un bucle empezando por la posicion hasta el contador que define los elementos que tiene
-        //    for (byte i = (posicion-=1); i < contador; i++)
-        //    {
-        //        aux = vecProduct[i];           //se guarda el producto de la posicion actual
-        //        vecProduct[i] = newProduct;    //se establece el producto de la posicion anterior en la posicion actual
-        //        newProduct = aux;                     //se copia el producto actual
-        //    }
-        //}
+                if (posicion == 1)
+                {
+                    newProduct.siguiente = temp;
+                    productInicio = newProduct;
+                }
+                else
+                    Insertar(newProduct, temp, posicion, contador);
+            }
+        }
+        private void Insertar(Producto nuevo, Producto temp, int posicion, int cont)
+        {
+            if (temp != null)
+            {
+                if (posicion - 1 == cont)
+                {
+                    nuevo.siguiente = temp.siguiente;
+                    temp.siguiente = nuevo;
+                }
+                else
+                {
+                    cont++;
+                    Insertar(nuevo, temp.siguiente, posicion, cont);
+                }
+            }
+
+        }
 
         //---------------------------------------------------------------------------------------------------------------------------------------------------------
         //METODO REPORTE

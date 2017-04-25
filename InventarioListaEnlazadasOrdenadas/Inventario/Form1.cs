@@ -52,7 +52,7 @@ namespace Inventario
         }
 
         //---------------------------------------------------------------------------------------------------------------------------------------------------------
-        //BUTTON iNSERTAR
+        //BUTTON INSERTAR
         private void bttonInsertar_Click(object sender, EventArgs e)
         {
             //Se crea un objeto de la clase producto
@@ -65,7 +65,7 @@ namespace Inventario
             product.setCantidad(Convert.ToInt32(txtCantidad.Text));
 
             //Se inserta el producto especificando como parametro en que posicion
-            //inventario.Insertar(product, Convert.ToByte(txtPosicion.Text));
+            inventario.Insertar(product, Convert.ToByte(txtPosicion.Text));
 
 
             //Se limpian las casillas
