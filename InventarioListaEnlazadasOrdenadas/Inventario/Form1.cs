@@ -103,5 +103,10 @@ namespace Inventario
         {
             txtReportes.Text = inventario.Reporte();
         }
+
+        private void bttonReporteInverso_Click(object sender, EventArgs e)
+        {
+            txtReportes.Text = inventario.reporteInverso();
+        }
     }
 }

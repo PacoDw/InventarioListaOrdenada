@@ -45,6 +45,7 @@
             this.bttonReporte = new System.Windows.Forms.Button();
             this.txtReportes = new System.Windows.Forms.TextBox();
             this.lblProcuctosEnAlmacen = new System.Windows.Forms.Label();
+            this.bttonReporteInverso = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblCodigo
@@ -189,9 +190,9 @@
             // 
             this.bttonReporte.AutoSize = true;
             this.bttonReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttonReporte.Location = new System.Drawing.Point(493, 388);
+            this.bttonReporte.Location = new System.Drawing.Point(439, 385);
             this.bttonReporte.Name = "bttonReporte";
-            this.bttonReporte.Size = new System.Drawing.Size(75, 26);
+            this.bttonReporte.Size = new System.Drawing.Size(129, 26);
             this.bttonReporte.TabIndex = 14;
             this.bttonReporte.Text = "Reporte";
             this.bttonReporte.UseVisualStyleBackColor = true;
@@ -217,12 +218,25 @@
             this.lblProcuctosEnAlmacen.Size = new System.Drawing.Size(0, 16);
             this.lblProcuctosEnAlmacen.TabIndex = 4;
             // 
+            // bttonReporteInverso
+            // 
+            this.bttonReporteInverso.AutoSize = true;
+            this.bttonReporteInverso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttonReporteInverso.Location = new System.Drawing.Point(439, 420);
+            this.bttonReporteInverso.Name = "bttonReporteInverso";
+            this.bttonReporteInverso.Size = new System.Drawing.Size(129, 26);
+            this.bttonReporteInverso.TabIndex = 15;
+            this.bttonReporteInverso.Text = "Reporte Inverso";
+            this.bttonReporteInverso.UseVisualStyleBackColor = true;
+            this.bttonReporteInverso.Click += new System.EventHandler(this.bttonReporteInverso_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(592, 449);
+            this.ClientSize = new System.Drawing.Size(592, 455);
             this.Controls.Add(this.txtReportes);
+            this.Controls.Add(this.bttonReporteInverso);
             this.Controls.Add(this.bttonReporte);
             this.Controls.Add(this.bttonBuscar);
             this.Controls.Add(this.bttonInsertar);
@@ -265,6 +279,7 @@
         private System.Windows.Forms.Button bttonReporte;
         private System.Windows.Forms.TextBox txtReportes;
         private System.Windows.Forms.Label lblProcuctosEnAlmacen;
+        private System.Windows.Forms.Button bttonReporteInverso;
     }
 }
 

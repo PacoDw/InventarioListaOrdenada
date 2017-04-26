@@ -161,5 +161,28 @@ namespace Inventario
             }
             return reporte; // se retorna el reporte con las caracteristicas de todos los productos
         }
+
+        //---------------------------------------------------------------------------------------------------------------------------------------------------------
+        //METODO REPORTE INVERSO
+        public string reporteInverso()
+        {
+            string reporte = string.Empty;
+
+            Producto temp = productInicio;
+
+            if (temp != null)
+                reporteInverso(temp, ref reporte);
+
+            return reporte;
+        }
+        private string reporteInverso(Producto temp, ref string reporte)
+        {
+            if (temp.siguiente != null)
+                reporteInverso(temp.siguiente, ref reporte);
+
+            reporte += temp.ToString();
+
+            return reporte;
+        }
     }
 }
