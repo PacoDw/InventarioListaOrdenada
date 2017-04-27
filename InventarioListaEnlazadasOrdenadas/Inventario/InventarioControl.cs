@@ -166,23 +166,19 @@ namespace Inventario
         //METODO REPORTE INVERSO
         public string reporteInverso()
         {
-            string reporte = string.Empty;
-
             Producto temp = productInicio;
 
-            if (temp != null)
-                reporteInverso(temp, ref reporte);
-
-            return reporte;
+            if (temp == null)
+                return "Sin reporte";
+            else
+                return reporteInverso(temp);
         }
-        private string reporteInverso(Producto temp, ref string reporte)
+        private string reporteInverso(Producto temp)
         {
-            if (temp.siguiente != null)
-                reporteInverso(temp.siguiente, ref reporte);
-
-            reporte += temp.ToString();
-
-            return reporte;
+            if (temp.siguiente == null)
+                return temp.ToString();
+            else
+                return reporteInverso(temp.siguiente) + temp.ToString();
         }
     }
 }
