@@ -81,7 +81,7 @@ namespace Inventario
 
             //Si fue encontrado el mismo metodo nos devolvera como true, ademas enviamos por parametro el codigo del producto que deseamos encontrar
             //, y por referencia pasamos la posicion
-            if (auxPro != null)
+            if (auxPro.codigo == Convert.ToInt32(txtCodigo.Text))
             {
                 //Se obtienen los valores del producto encontrado
                 txtNombre.Text = auxPro.nombre;

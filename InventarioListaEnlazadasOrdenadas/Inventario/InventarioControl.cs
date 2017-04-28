@@ -34,13 +34,10 @@ namespace Inventario
                     productInicio = newProduct;
                 }
                 else
-                {
-                    Agregar(ref temp, ref newProduct);
-                    temp.siguiente = newProduct;
-                }
+                    Agregar(temp, newProduct);
             }
         }
-        private void Agregar(ref Producto temp, ref Producto nuevo)
+        private void Agregar(Producto temp, Producto nuevo)
         {
             if (temp.siguiente != null)
             {
@@ -50,11 +47,10 @@ namespace Inventario
                     temp.siguiente = nuevo;
                 }
                 else
-                {
-                    temp = temp.siguiente;
-                    Agregar(ref temp, ref nuevo);
-                }
+                    Agregar(temp.siguiente, nuevo);
             }
+            else
+                temp.siguiente = nuevo;
         }
 
         //---------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -66,11 +62,10 @@ namespace Inventario
             if (productInicio != null)
             {
                 temp = productInicio;
-                while (temp != null)
+                while (temp != null && temp.codigo < codigo)
                 {
-                    if (temp.codigo == codigo)
-                        break;
-                    temp = temp.siguiente;
+                    if (temp.codigo != codigo)
+                        temp = temp.siguiente;
                 }
             }
             return temp;
@@ -97,12 +92,10 @@ namespace Inventario
         }
         private void Borrar(Producto temp, int codigo)
         {
-            if (temp.siguiente != null)
+            if (temp.siguiente != null && temp.siguiente.codigo <= codigo)
             {
                 if (temp.siguiente.codigo == codigo)
-                {
                     temp.siguiente = temp.siguiente.siguiente;
-                }
                 else
                     Borrar(temp.siguiente, codigo);
             }
